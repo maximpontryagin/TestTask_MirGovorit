@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Главная
+{% endblock %}
+{% block content %}
+<h1 class="pb-2 mb-0"> Блюда в которых отсуствует указанный продукт или его в нем меньше 10гр </h1>
+  <table style="font-size: 30px;">
+    <colgroup>
+      <col span="2" style="background:Khaki">
+      <col style="background-color:LightCyan">
+    </colgroup>
+    <tr>
+      <th>id Рецепта</th>
+      <th>Наименование рецепта</th>
+    </tr>
+    {% for recipe in recipes %}
+    <tr>
+      <td>{{recipe.id}}</td>
+      <td>{{recipe.title}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}
